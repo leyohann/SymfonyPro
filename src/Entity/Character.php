@@ -36,7 +36,7 @@ class Character
     private ?int $defense = null;
 
     #[ORM\Column]
-    private ?int $level = null;
+    private ?int $level = 1;
 
     #[ORM\Column(nullable: true)]
     private ?int $xp = null;

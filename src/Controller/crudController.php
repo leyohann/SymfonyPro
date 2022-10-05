@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller\Admin;
+/**namespace App\Controller;
 
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -11,4 +11,4 @@ class ProductCrudController extends AbstractCrudController
         return $crud
         ->overrideTemplate('crud/field/id', 'APP/src/template/character/new.html.twig');
     }
-}
+}*/
