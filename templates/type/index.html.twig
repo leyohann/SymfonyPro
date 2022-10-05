@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Type index{% endblock %}
+
+{% block body %}
+    <h1>Type index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Base_strength</th>
+                <th>Base_speed</th>
+                <th>Base_magic</th>
+                <th>Base_defense</th>
+                <th>Base_xp</th>
+                <th>Base_life</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type in types %}
+            <tr>
+                <td>{{ type.id }}</td>
+                <td>{{ type.name }}</td>
+                <td>{{ type.baseStrength }}</td>
+                <td>{{ type.baseSpeed }}</td>
+                <td>{{ type.baseMagic }}</td>
+                <td>{{ type.baseDefense }}</td>
+                <td>{{ type.baseXp }}</td>
+                <td>{{ type.baseLife }}</td>
+                <td>
+                    <a href="{{ path('app_type_show', {'id': type.id}) }}">show</a>
+                    <a href="{{ path('app_type_edit', {'id': type.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_type_new') }}">Create new</a>
+{% endblock %}
